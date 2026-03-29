@@ -1,0 +1,223 @@
+meta:
+  direction: ltr
+  language: ko
+
+basic:
+  name: 김현서
+  title: 통계학 전공 | 수학 / 경제학 복수전공
+  avatar:
+    show: true
+    path: /assets/images/profile.png
+
+contact:
+  location: 서울, 대한민국
+  email: hyeonseo.stat@gmail.com
+  phone:
+  website:
+
+  gender:
+  birthday:
+  nationality:
+  visa:
+  drivinglicense:
+
+  github: hyeonseo-kim
+  googlescholar:
+  researchgate:
+  orcid:
+  figshare:
+  kaggle:
+  linkedin:
+  instagram:
+  youtube:
+
+profile:
+  show: true
+  order: 1
+  title: 소개
+  description: |
+    이화여자대학교에서 통계학을 전공하고 있으며, 수학과 경제학을 복수전공하고 있습니다.
+    통계적 모형화, 계량경제학, 리스크 관리, 보험 분석, 데이터 기반 연구에 관심이 있으며, 정량적 방법을 실제 경제·금융 문제에 적용하는 데 중점을 두고 있습니다.
+
+experience:
+  show: true
+  order: 2
+  title: 경험
+  items:
+    - company: 이화보험학회
+      link: https://www.instagram.com/ewha_eis/
+      tags: 학술, 연구
+      date: 2025.03 - 2026.02
+      role: 학회원
+      location: 서울, 대한민국
+      description: |
+        보험, 리스크 관리, 인슈어테크와 관련된 학술 학습과 토의에 참여하였습니다.
+        + 보험 상품, 산업 동향, 리스크 관련 주제를 분석하였습니다.
+        + 보험 분석 및 계리 응용 분야에 대한 학문적 관심을 확장하였습니다.
+
+    - company: 대한민국 대학생 교육기부단
+      link: https://www.instagram.com/edufordonation/
+      tags: 리더십, 운영
+      date: 2025.03 - 현재
+      role: 단장 (전 대외협력팀장)
+      location: 서울, 대한민국
+      description: |
+        조직 운영 기획과 교육봉사 활동을 총괄하였습니다.
+        + 리더십과 대외협력 경험을 바탕으로 대외협력팀장에서 단장으로 선임되었습니다.
+        + 교육 확장을 위한 대외 협력과 이해관계자 소통을 지원하였습니다.
+        + 팀 기반 교육 프로그램과 조직 운영을 조정하였습니다.
+
+project:
+  show: true
+  order: 3
+  title: 프로젝트
+
+  items:
+    - name: 우울, 자녀 교류, 사회활동 간 상관관계 및 회귀분석
+      link:
+      tags: 통계, 회귀분석, 정책
+      date: 2025
+      description: |
+        노인의 우울 점수에 자녀와의 만남 빈도, 연락 빈도, 사회활동 빈도가 미치는 영향을 분석하였습니다.
+        + 실증분석을 위해 변수 전처리와 표준화를 수행하였습니다.
+        + 사회적 변수와 가족 관련 변수 간 상호작용 가능성을 검토하였습니다.
+        + 분석 결과를 바탕으로 정책적 시사점을 도출하였습니다.
+
+    - name: 포트폴리오 최적화 및 CAPM 분석
+      link:
+      tags: 금융계량, R, 리스크 분석
+      date: 2025
+      description: |
+        과거 금융 데이터를 바탕으로 포트폴리오의 위험과 수익을 실증적으로 분석하였습니다.
+        + Value at Risk 분석과 포트폴리오 최적화를 수행하였습니다.
+        + CAPM 회귀분석을 적용하고 결과를 금융 맥락에서 해석하였습니다.
+
+    - name: 보험 분석 및 IFRS 17 연구
+      link:
+      tags: IFRS 17, 보험 분석, 리스크 관리, 인슈어테크
+      date: 2025
+      description: |
+        통계적 방법을 보험 및 리스크 관리 문제에 연결하는 정량 연구 주제를 탐구하였습니다.
+        + IFRS 17 하에서 해지율 가정 오차가 CSM과 미래 현금흐름 현재가치에 미치는 영향을 검토하였습니다.
+        + 자동차보험 모형, 건강검진 할인특약 등 보험 상품 분석과 인슈어테크 동향을 살펴보았습니다.
+        + 가정 오차가 재무성과와 리스크 관리 의사결정에 미치는 영향을 검토하였습니다.
+
+skill:
+  show: true
+  order: 4
+  title: 기술 및 역량
+
+  groups:
+    - name: 프로그래밍 및 도구
+      item:
+        - R
+        - Python
+        - Microsoft Excel
+        - LaTeX
+
+    - name: 정량 분석
+      item:
+        - 통계적 모형화
+        - 계량경제학
+        - 리스크 관리 (VaR, CAPM)
+        - 데이터 전처리 및 탐색적 자료분석
+
+    - name: 분야 이해
+      item:
+        - 보험 분석
+        - IFRS 17 연구
+        - 금융계량
+
+    - name: 리더십 및 소통
+      item:
+        - 리더십
+        - 프로그램 운영 조정
+        - 커뮤니케이션
+
+education:
+  show: true
+  order: 5
+  title: 학력
+  
+  items:
+    - institution: 이화여자대학교
+      link:
+      date: 2023 - 현재
+      degree: 학사
+      description: |
+        통계학을 전공하며 수학과 경제학을 복수전공하고 있습니다.
+        + 졸업예정: 2027년 2월
+        + GPA: 3.96/4.30
+        + 주요 수강과목: 계량경제학, 수리통계학, 금융경제학, 계리리스크관리
+        + 수업, 학술 프로젝트, 관련 활동을 통해 정량 분석 역량을 발전시켰습니다.
+
+certificate:
+  show: true
+  order: 6
+  title: 자격
+
+  items:
+    - name: ADsP (데이터분석 준전문가)
+      issuer: 한국데이터산업진흥원
+      date: 2025.06
+      description: |
+        데이터 이해에 대한 기본지식을 바탕으로 데이터분석 기획 및 데이터분석 등의 직무 수행 능력 평가.
+    - name: 구리시 자원봉사 100시간 인증자
+      awarder: 구리시자원봉사센터
+      date: 2025.12.
+      description: |
+        구리시에서 자원봉사 100시간 이상 활동 인증.
+
+publication:
+  show: false
+  order: 7
+  title: 출판물
+
+award:
+  show: true
+  order: 8
+  title: 수상
+
+  items:
+    - name: 교육기부 프로그램 수상
+      awarder: NSI 공공인재스쿨
+      date: 2025
+      link:
+      description: |
+        교육 기부 팀 프로젝트에서 데이터 분석과 교육 활동 성과 분석에 기여하였습니다.
+
+patent:
+  show: false
+  order: 9
+  title: 특허
+
+organization:
+  show: false
+  order: 10
+  title: 활동
+
+language:
+  show: true
+  order: 11
+  title: 언어
+
+  items:
+    - idiom: 영어
+      level: TOEFL ibt 72점
+
+interest:
+  show: false
+  order: 12
+  title: 관심사
+
+evaluation:
+  show: false
+  order: 13
+  title: 자기평가
+
+reference:
+  show: false
+  order: 14
+  title: 추천인
+
+close: <strong>현재 이 이력서는 비공개 상태입니다.</strong>

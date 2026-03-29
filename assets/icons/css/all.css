@@ -1,0 +1,59 @@
+@font-face {
+  font-family: "Icons";
+  font-style: normal;
+  font-weight: 900;
+  font-display: block;
+  src: url("../webfonts/icons.woff2") format("woff2"),
+       url("../webfonts/icons.ttf")   format("truetype");
+}
+
+.icon {
+  display: inline-block;
+  font-family: "Icons" !important;
+  font-feature-settings: normal;
+  font-style: normal;
+  font-synthesis: none;
+  font-variant: normal;
+  font-weight: 900;
+  line-height: 1;
+  text-align: center;
+  text-rendering: auto;
+  width: 1.25em;
+}
+
+.icon-codeforces:before {
+  content: "\e900";
+}
+.icon-codewars:before {
+  content: "\e901";
+}
+.icon-figshare:before {
+  content: "\e902";
+}
+.icon-fiverr:before {
+  content: "\e903";
+}
+.icon-freelancer:before {
+  content: "\e904";
+}
+.icon-huggingface:before {
+  content: "\e905";
+}
+.icon-indeed:before {
+  content: "\e906";
+}
+.icon-leetcode:before {
+  content: "\e907";
+}
+.icon-threema:before {
+  content: "\e909";
+}
+.icon-topcoder:before {
+  content: "\e90a";
+}
+.icon-tryhackme:before {
+  content: "\e90b";
+}
+.icon-wire:before {
+  content: "\e90c";
+}
