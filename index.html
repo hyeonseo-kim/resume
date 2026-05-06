@@ -326,6 +326,14 @@
       font-size: 15px;
     }
 
+    .timeline-body p {
+      margin: 0 0 8px;
+    }
+
+    .timeline-body p:last-child {
+      margin-bottom: 0;
+    }
+
     .chips {
       display: flex;
       flex-wrap: wrap;
@@ -402,7 +410,7 @@
 <body>
   <div class="topbar">
     <div class="wrap nav">
-      <a class="brand" href="/resume/ko.html">
+      <a class="brand" href="/resume">
         <span class="brand-mark">HS</span>
         <span>Kim Hyeonseo</span>
       </a>
@@ -410,8 +418,8 @@
         <a href="#about">소개</a>
         <a href="#experience">경험</a>
         <a href="#projects">프로젝트</a>
-        <a href="/resume/coursework.html">수강과목</a>
-        <a href="#contact" class="nav-cta">연락처</a>
+        <a href="/resume/coursework">수강과목</a>
+        <a href="/resume/coverletter">자기소개서</a>
       </div>
     </div>
   </div>
@@ -421,19 +429,18 @@
       <div class="wrap">
         <div class="hero-card">
           <div class="hero-main">
-            <div class="eyebrow">Resume · Statistics / Mathematics / Economics</div>
             <h1>김현서</h1>
-            <p>이화여자대학교에서 통계학을 전공하고 있으며, 수학과 경제학을 복수전공하고 있습니다.</p>
-            <p style="margin-top:12px;">정량적 분석을 바탕으로 금융, 보험, 리스크 관리, 데이터 분석 문제를 해석하고 구조화하는 데 관심이 있습니다.</p>
+            <p>이화여자대학교 통계학과 학부생 | 수학 & 경제학</p>
+            <p style="margin-top:12px;">정량적 데이터 분석을 바탕으로 보험 · 금융 및 리스크 관리 문제를 해석하고 구조화하는 데 관심이 많습니다.</p>
 
             <div class="button-row">
               <a class="btn btn-primary" href="#projects">프로젝트 보기</a>
-              <a class="btn btn-secondary" href="/resume/coursework.html">수강과목</a>
+              <a class="btn btn-secondary" href="/resume/coursework">수강과목</a>
             </div>
 
             <div class="hero-meta">
               <div class="meta-card">
-                <strong>전공</strong>
+                <strong>주전공</strong>
                 <span>통계학</span>
               </div>
               <div class="meta-card">
@@ -445,8 +452,11 @@
                 <span>보험 · 금융 · 리스크 관리 · 데이터 분석</span>
               </div>
               <div class="meta-card">
-                <strong>키워드</strong>
-                <span>Quantitative Analysis · Econometrics · Risk</span>
+                <strong>학력사항</strong>
+                <span>
+                  <p>이화여자대학교 졸업예정</p>
+                  <p style="margin-top:4px;">2023.03 - 2028.08</p>
+                </span>
               </div>
             </div>
           </div>
@@ -454,7 +464,6 @@
           <div class="hero-side" id="contact">
             <div class="profile-card">
               <h2>Contact</h2>
-              <p>이력서, 프로젝트, 수강과목을 연결한 개인 사이트입니다.</p>
               <div class="contact-list">
                 <div class="contact-item">
                   <strong>Email</strong>
@@ -474,8 +483,8 @@
             <div class="mini-card">
               <h3>바로가기</h3>
               <div class="button-row" style="margin-top:14px;">
-                <a class="btn btn-secondary" href="/resume/coursework.html">수강과목 보기</a>
-                <a class="btn btn-secondary" href="#projects">프로젝트 보기</a>
+                <a class="btn btn-secondary" href="/resume/coursework">주요 수강과목</a>
+                <a class="btn btn-secondary" href="/resume/coverletter">자기소개서</a>
               </div>
             </div>
           </div>
@@ -532,7 +541,11 @@
                   <span>2025.03 - 2026.02</span>
                 </div>
                 <div class="timeline-meta">학회원 · 서울, 대한민국</div>
-                <div class="timeline-body">보험, 리스크 관리, 인슈어테크와 관련된 학술 학습과 토의에 참여하였으며, 보험 상품과 산업 동향, 리스크 관련 주제를 분석하였습니다.</div>
+                <div class="timeline-body">
+                   <p>보험, 리스크 관리, 인슈어테크를 주제로 한 학술 활동에 참여하였습니다.</p>
+                   <p>보험 상품 구조, 산업 동향, 리스크 관련 이슈를 검토하며 보험 산업을 정량적·제도적 관점에서 이해하고자 하였습니다.</p>
+                   <p>학회 내 토의와 자료 분석을 통해 보험 분석 및 계리 응용 분야에 대한 관심을 심화하였습니다.</p>
+                </div>
               </div>
 
               <div class="timeline-item">
@@ -541,7 +554,11 @@
                   <span>2025.03 - 현재</span>
                 </div>
                 <div class="timeline-meta">단장 (전 대외협력팀장) · 서울, 대한민국</div>
-                <div class="timeline-body">교육봉사 프로그램 기획과 조직 운영 전반을 담당하고 있으며, 외부 협력과 이해관계자 소통, 팀 단위 프로그램 운영을 조정하고 있습니다.</div>
+                <div class="timeline-body">
+                  <p>교육봉사 프로그램 기획과 조직 운영 전반을 총괄하고 있습니다.</p>
+                  <p>대외협력팀장으로 활동하며 외부 기관과의 협력, 일정 조율, 커뮤니케이션 업무를 수행하였고, 이후 단장으로 선임되어 조직 운영과 실무 조정을 담당하고 있습니다.</p>
+                  <p>팀 단위 프로그램을 운영하며 리더십, 협업, 대외 소통 역량을 쌓았습니다.</p>
+                </div>
               </div>
 
               <div class="timeline-item">
@@ -550,7 +567,13 @@
                   <span>2023.03 - 2024.12</span>
                 </div>
                 <div class="timeline-meta">부원 · 서울, 대한민국</div>
-                <div class="timeline-body">학과 행사와 학생회 운영을 지원하며 학내 소통과 실무를 담당하였습니다.</div>
+                <div class="timeline-body">
+                  <div class="timeline-body">
+                    <p>학과 행사 운영과 학생회 실무를 지원하며 학내 소통과 운영 업무에 참여하였습니다.</p>
+                    <p>행사 준비, 일정 조율, 현장 운영 등 학생회 전반의 실무를 경험하며 협업과 책임감을 기를 수 있었습니다.</p>
+                    <p>이를 통해 학과 구성원과의 소통 능력과 조직 운영에 대한 이해를 높였습니다.</p>
+                  </div>
+                </div>
               </div>
             </div>
           </article>
