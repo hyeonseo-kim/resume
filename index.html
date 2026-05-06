@@ -1,6 +1,636 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kim Hyeonseo | Resume</title>
+  <style>
+    :root {
+      --bg: #f6f8fc;
+      --surface: rgba(255,255,255,0.88);
+      --surface-strong: #ffffff;
+      --text: #111827;
+      --muted: #4b5563;
+      --line: rgba(17,24,39,0.08);
+      --primary: #111827;
+      --accent: #2563eb;
+      --accent-soft: rgba(37,99,235,0.08);
+      --shadow: 0 20px 50px rgba(15,23,42,0.08);
+      --radius-xl: 28px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --max: 1180px;
+    }
 
-{%- assign data = site.data.data %}
-{%- include common.html %}
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans KR", "Apple SD Gothic Neo", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(37,99,235,0.10), transparent 26%),
+        radial-gradient(circle at top right, rgba(99,102,241,0.08), transparent 22%),
+        var(--bg);
+      line-height: 1.65;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(calc(100% - 32px), var(--max)); margin: 0 auto; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(16px);
+      background: rgba(246,248,252,0.78);
+      border-bottom: 1px solid rgba(17,24,39,0.06);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 18px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #111827, #2563eb);
+      color: #fff;
+      font-size: 14px;
+      box-shadow: var(--shadow);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .nav-links a {
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-size: 14px;
+      color: var(--muted);
+      transition: .2s ease;
+    }
+
+    .nav-links a:hover {
+      background: rgba(17,24,39,0.06);
+      color: var(--text);
+    }
+
+    .nav-links .nav-cta {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .hero {
+      padding: 52px 0 26px;
+    }
+
+    .hero-card {
+      background: var(--surface);
+      border: 1px solid rgba(255,255,255,0.7);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      padding: 40px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 700;
+      width: fit-content;
+    }
+
+    h1 {
+      margin: 18px 0 10px;
+      font-size: clamp(34px, 6vw, 62px);
+      line-height: 1.05;
+      letter-spacing: -0.045em;
+    }
+
+    .hero-main p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 18px;
+      max-width: 720px;
+    }
+
+    .hero-meta {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .meta-card {
+      background: linear-gradient(180deg, #ffffff, #f8fbff);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px;
+    }
+
+    .meta-card strong {
+      display: block;
+      font-size: 16px;
+      margin-bottom: 4px;
+      letter-spacing: -0.02em;
+    }
+
+    .meta-card span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: 14px;
+      font-weight: 700;
+      border: 1px solid transparent;
+      transition: transform .18s ease, background .18s ease;
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary { background: var(--primary); color: #fff; }
+    .btn-secondary { background: #fff; border-color: var(--line); color: var(--text); }
+
+    .hero-side {
+      display: grid;
+      gap: 16px;
+    }
+
+    .profile-card,
+    .mini-card,
+    .content-card,
+    .project-card,
+    .footer-box {
+      background: var(--surface);
+      border: 1px solid rgba(255,255,255,0.7);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+    }
+
+    .profile-card,
+    .mini-card,
+    .content-card,
+    .project-card,
+    .footer-box {
+      padding: 28px;
+    }
+
+    .profile-card h2,
+    .content-card h3,
+    .project-card h3,
+    .mini-card h3 {
+      margin: 0 0 10px;
+      letter-spacing: -0.03em;
+    }
+
+    .profile-card p,
+    .mini-card p,
+    .content-card p,
+    .project-card p,
+    .footer-box p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .contact-item {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 12px 14px;
+      font-size: 14px;
+    }
+
+    .contact-item strong {
+      display: block;
+      margin-bottom: 2px;
+      color: var(--text);
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .section {
+      padding: 18px 0 0;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-size: clamp(28px, 4vw, 42px);
+      letter-spacing: -0.04em;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 620px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 20px;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 18px;
+    }
+
+    .timeline-item {
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .timeline-item:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .timeline-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 6px;
+    }
+
+    .timeline-top strong {
+      font-size: 18px;
+      letter-spacing: -0.02em;
+    }
+
+    .timeline-top span,
+    .timeline-meta {
+      color: var(--muted);
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    .timeline-body {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .chip {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(17,24,39,0.05);
+      border: 1px solid rgba(17,24,39,0.06);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 20px;
+    }
+
+    .project-tag {
+      display: inline-flex;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .project-link {
+      display: inline-flex;
+      margin-top: 16px;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .footer {
+      padding: 44px 0 64px;
+    }
+
+    .footer-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    @media (max-width: 1040px) {
+      .hero-card,
+      .grid-2,
+      .project-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 760px) {
+      .nav { flex-direction: column; align-items: flex-start; }
+      .hero-card,
+      .profile-card,
+      .mini-card,
+      .content-card,
+      .project-card,
+      .footer-box { padding: 22px; }
+      .hero-meta { grid-template-columns: 1fr; }
+      .footer-box { flex-direction: column; align-items: flex-start; }
+      .timeline-top { flex-direction: column; }
+      .timeline-top span { white-space: normal; }
+      h1 { font-size: 42px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="wrap nav">
+      <a class="brand" href="/resume/ko.html">
+        <span class="brand-mark">HS</span>
+        <span>Kim Hyeonseo</span>
+      </a>
+      <div class="nav-links">
+        <a href="#about">소개</a>
+        <a href="#experience">경험</a>
+        <a href="#projects">프로젝트</a>
+        <a href="/resume/coursework.html">수강과목</a>
+        <a href="#contact" class="nav-cta">연락처</a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <div class="hero-card">
+          <div class="hero-main">
+            <div class="eyebrow">Resume · Statistics / Mathematics / Economics</div>
+            <h1>김현서</h1>
+            <p>이화여자대학교에서 통계학을 전공하고 있으며, 수학과 경제학을 복수전공하고 있습니다.</p>
+            <p style="margin-top:12px;">정량적 분석을 바탕으로 금융, 보험, 리스크 관리, 데이터 분석 문제를 해석하고 구조화하는 데 관심이 있습니다.</p>
+
+            <div class="button-row">
+              <a class="btn btn-primary" href="#projects">프로젝트 보기</a>
+              <a class="btn btn-secondary" href="/resume/coursework.html">수강과목</a>
+            </div>
+
+            <div class="hero-meta">
+              <div class="meta-card">
+                <strong>전공</strong>
+                <span>통계학</span>
+              </div>
+              <div class="meta-card">
+                <strong>복수전공</strong>
+                <span>수학 · 경제학</span>
+              </div>
+              <div class="meta-card">
+                <strong>관심 분야</strong>
+                <span>보험 · 금융 · 리스크 관리 · 데이터 분석</span>
+              </div>
+              <div class="meta-card">
+                <strong>키워드</strong>
+                <span>Quantitative Analysis · Econometrics · Risk</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-side" id="contact">
+            <div class="profile-card">
+              <h2>Contact</h2>
+              <p>이력서, 프로젝트, 수강과목을 연결한 개인 사이트입니다.</p>
+              <div class="contact-list">
+                <div class="contact-item">
+                  <strong>Email</strong>
+                  hyeonseo.stat@gmail.com
+                </div>
+                <div class="contact-item">
+                  <strong>GitHub</strong>
+                  github.com/hyeonseo-kim
+                </div>
+                <div class="contact-item">
+                  <strong>Location</strong>
+                  Seoul, South Korea
+                </div>
+              </div>
+            </div>
+
+            <div class="mini-card">
+              <h3>바로가기</h3>
+              <div class="button-row" style="margin-top:14px;">
+                <a class="btn btn-secondary" href="/resume/coursework.html">수강과목 보기</a>
+                <a class="btn btn-secondary" href="#projects">프로젝트 보기</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2>소개</h2>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <article class="content-card">
+            <h3>Profile</h3>
+            <p>통계적 모형화, 계량경제학, 리스크 관리, 보험 분석, 데이터 기반 연구에 관심이 있습니다.</p>
+            <p style="margin-top:12px;">정량적 방법을 실제 경제·금융 문제에 적용하고, 분석 결과를 해석 가능한 형태로 정리하는 데 중점을 두고 있습니다.</p>
+          </article>
+
+          <article class="content-card">
+            <h3>Core Keywords</h3>
+            <div class="chips">
+              <span class="chip">Statistics</span>
+              <span class="chip">Mathematics</span>
+              <span class="chip">Economics</span>
+              <span class="chip">Financial Econometrics</span>
+              <span class="chip">Insurance</span>
+              <span class="chip">Risk Analysis</span>
+              <span class="chip">R</span>
+              <span class="chip">Python</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2>경험</h2>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <article class="content-card">
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-top">
+                  <strong>이화보험학회</strong>
+                  <span>2025.03 - 2026.02</span>
+                </div>
+                <div class="timeline-meta">학회원 · 서울, 대한민국</div>
+                <div class="timeline-body">보험, 리스크 관리, 인슈어테크와 관련된 학술 학습과 토의에 참여하였으며, 보험 상품과 산업 동향, 리스크 관련 주제를 분석하였습니다.</div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-top">
+                  <strong>대한민국 대학생 교육기부단</strong>
+                  <span>2025.03 - 현재</span>
+                </div>
+                <div class="timeline-meta">단장 (전 대외협력팀장) · 서울, 대한민국</div>
+                <div class="timeline-body">교육봉사 프로그램 기획과 조직 운영 전반을 담당하고 있으며, 외부 협력과 이해관계자 소통, 팀 단위 프로그램 운영을 조정하고 있습니다.</div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-top">
+                  <strong>통계학과 학생회</strong>
+                  <span>2023.03 - 2024.12</span>
+                </div>
+                <div class="timeline-meta">부원 · 서울, 대한민국</div>
+                <div class="timeline-body">학과 행사와 학생회 운영을 지원하며 학내 소통과 실무를 담당하였습니다.</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="content-card">
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-top">
+                  <strong>학업</strong>
+                  <span>이화여자대학교</span>
+                </div>
+                <div class="timeline-body">통계학 전공, 수학·경제학 복수전공을 통해 정량 분석, 수리적 모델링, 경제·금융 해석 역량을 함께 확장하고 있습니다.</div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-top">
+                  <strong>관심 영역</strong>
+                  <span>보험 · 금융 · 데이터 분석</span>
+                </div>
+                <div class="timeline-body">보험 분석, IFRS 17, 금융계량, 포트폴리오 분석, 사회문제 데이터 분석 등 다양한 주제를 정량적 관점에서 탐구하고 있습니다.</div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-top">
+                  <strong>연결 페이지</strong>
+                  <span>학업 기반 확인</span>
+                </div>
+                <div class="timeline-body">수강과목 페이지에서 통계, 수학, 보험·금융, 데이터 분석 관련 주요 과목을 분야별로 확인할 수 있습니다.</div>
+                <a class="project-link" href="/resume/coursework.html">수강과목 보기 →</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2>프로젝트</h2>
+          </div>
+        </div>
+
+        <div class="project-grid">
+          <article class="project-card">
+            <span class="project-tag">통계 · 회귀분석 · 정책</span>
+            <h3>노인 우울, 자녀 교류, 사회활동 관계 분석</h3>
+            <p>노인의 우울 점수와 자녀 만남·연락 빈도, 사회활동 빈도의 관계를 분석하였으며, 사회활동 지원의 중요성에 대한 정책적 시사점을 도출하였습니다.</p>
+          </article>
+
+          <article class="project-card">
+            <span class="project-tag">금융계량 · R · 리스크 분석</span>
+            <h3>포트폴리오 최적화 및 CAPM 분석</h3>
+            <p>과거 금융 데이터를 바탕으로 자산 수익률과 위험을 분석하고, Value at Risk 측정과 포트폴리오 최적화, CAPM 회귀분석을 수행하였습니다.</p>
+          </article>
+
+          <article class="project-card">
+            <span class="project-tag">IFRS 17 · 보험 분석 · 리스크 관리</span>
+            <h3>보험 분석 및 IFRS 17 연구</h3>
+            <p>IFRS 17, 해지율 가정 오차, CSM, 보험 상품 구조와 인슈어테크 이슈를 중심으로 보험 산업의 재무·리스크 이슈를 검토하였습니다.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="footer">
+      <div class="wrap">
+        <div class="footer-box">
+          <div>
+            <h3 style="margin:0 0 6px; font-size:22px; letter-spacing:-0.03em;">더 알아보기</h3>
+            <p>수강과목 페이지와 연결해 학업 기반과 프로젝트 경험을 함께 보여줄 수 있습니다.</p>
+          </div>
+          <div class="button-row" style="margin-top:0;">
+            <a class="btn btn-primary" href="/resume/coursework.html">수강과목</a>
+            <a class="btn btn-secondary" href="mailto:hyeonseo.stat@gmail.com">Email</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
